@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        #wrapper {
+            width: 950px;
+            margin: 0px auto;
+        }
+
+        #wrapper h1 {
+            text-align: center
+        }
+
+        #subcontent{
+            margin: 0px auto;
+        }
+
+        .subcontent {
+            min-height: 200px;
+            width: 197px;
+            background-color:lightskyblue;
+            display: inline-block;
+            margin: 20px;
+            
+        }
+    </style>
+    <title>Play Ground</title>
+</head>
+
+<body>
+    <div id="wrapper">
+        <h1>Welcome!</h1>
+        {% if times is not defined %}
+        <div id="subcontents">
+        <div class="subcontent"></div>
+        <div class="subcontent"></div>
+        <div class="subcontent"></div>
+        {% endif %}
+    </div>
+    </div>
+    {% if times is defined and color is not defined%}
+        {% for i in range(times) %}
+          <div class="subcontent"></div>
+        {% endfor %}
+        {% endif %}
+        {% if color is defined %}
+        {% for i in range(times) %}
+          <div class="subcontent" style="background-color:{{color}}"></div>
+        {% endfor %}
+        {% endif %}
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dojo Survey</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        #wrapper {
+            width: 950px;
+            margin: 50px auto;
+
+        }
+
+        #container {
+            width: 700px;
+            margin: 0 auto;
+            border: black solid 2px;
+            padding: 30px;
+        }
+
+        .block_btn {
+            display: block;
+        }
+
+        p {
+            display: inline-block;
+        }
+
+        textarea {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        #submit {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="container">
+            <form action="/info" method="POST">
+                Name: <input type='text' name='name'>
+                <br><br>
+                <p>Dojo Location:</p>
+                <select name=location>
+                    <option value="san_jose">San Jose</option>
+                    <option value="santa_clara">Santa Clara</option>
+                    <option value="fremont">Fremont</option>
+                    <option value="palo_alto">Palo Alto</option>
+                </select>
+                <br>
+                <p>Favorite Language:</p>
+                <select name="lang">
+                    <option value="javascript">Javascript</option>
+                    <option value="python">Python</option>
+                    <option value="html">HTML</option>
+                    <option value="css">CSS</option>
+                </select>
+                <br>
+                <p>Comments (Optional):</p><br>
+                <textarea name="comment" rows="10" cols="60"></textarea>
+                <p>Please select your gender:</p><br>
+                <input type="radio" name="gender" value="male"> Male
+                <input type="radio" name="gender" value="female"> Female
+                <input type="radio" name="gender" value="other"> Other<br><br>
+                <input type="checkbox" id="termsNCon" name="termsNCon">
+                <label for="termsNCon">Terms & Conditions</label><br><br>
+                <input id="submit" type="submit">
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

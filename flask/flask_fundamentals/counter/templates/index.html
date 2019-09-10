@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Counter Session</title>
+    <style>
+        #wrapper {
+            width: 900px;
+            margin: 0 auto;
+        }
+
+        #wrapper h1 {
+            text-align: center;
+        }
+
+        #wrapper p {
+            text-align: center;
+        }
+
+        #wrapper button{
+            text-align: center;
+            text right: 20px
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+
+        <h1>Counter</h1>
+        {% if session['count'] is defined%}
+        <p>{{session['count']}} times<p>
+        <p>{{session['page_count']}} actual page vists</p>
+                {% endif %}
+                <!-- <button onclick="location.href='/destroy_session'">Click me</button> -->
+                <div id=""></div>
+                <button type="button" class="btn btn-primary" onclick="location.href='/index/twice'">Add Count
+                    twice</button>
+                <button type="button" class="btn btn-secondary" onclick="location.href='/index'">Reset
+                    Count</button>
+                <button type="button" class="btn btn-secondary" onclick="location.href='/destroy_session'">Destroy
+                    Session</button>
+                <form action="/custom_increment" method="POST">
+                    counter: <input name="user_count" type='text'>
+                    <input type='submit' value='GO'>
+                </form>
+    </div>
+</body>
+
+</html>
